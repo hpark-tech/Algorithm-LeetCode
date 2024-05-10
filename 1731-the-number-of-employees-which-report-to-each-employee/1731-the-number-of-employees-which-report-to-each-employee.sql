@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select table1.employee_id, table1.name, count(table2.reports_to) as reports_count, ceiling(avg(table2.age)) as average_age from Employees as table1 left join Employees as table2 on table1.employee_id= table2.reports_to group by table1.employee_id having table1.employee_id in (select distinct reports_to from Employees where reports_to is not null) order by employee_id
