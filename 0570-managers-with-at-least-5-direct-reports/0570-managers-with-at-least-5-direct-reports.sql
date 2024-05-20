@@ -1,0 +1,1 @@
+select name from Employee where id in (select managerId from (select managerId, count(managerId) from Employee group by managerId having count(managerId)>=5) as t1)
