@@ -1,0 +1,1 @@
+select s1.user_id, round(count(case when action='confirmed' then action end) /count(s1.user_id),2) as confirmation_rate from Signups s1 left join Confirmations c1 on s1.user_id = c1.user_id group by user_id 
