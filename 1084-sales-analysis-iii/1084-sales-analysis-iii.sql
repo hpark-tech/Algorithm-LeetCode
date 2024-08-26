@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select S.product_id, product_name from Product P inner join Sales S on P.product_id = S.product_id group by S.product_id, product_name having sum(case when sale_date between '2019-01-01' and '2019-03-31' then 0 else 1 end) = 0
